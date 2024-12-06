@@ -1,0 +1,7 @@
+.DS_Store
+x_train.npy
+y_train.npy
+x_val.npy
+y_val.npy
+x_test.npy
+y_test.npy
