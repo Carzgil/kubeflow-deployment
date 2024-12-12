@@ -81,8 +81,32 @@ docker build -t evaluate-image docker/Dockerfile.evaluate
 ```bash
 python pipeline/pipeline.py
 ```
-### 2. Upload to Kubeflow Pipelines
-- Open Kubeflow Pipelines UI
-- Click on "Upload Pipeline"
-- Select the `cifar10_pipeline.yaml` file
-- Click "Run" to execute the pipeline
+### 1. Compile the Pipeline
+```bash
+python pipeline/pipeline.py
+```
+
+### 2. Upload Compiled Pipeline to Google Cloud Storage
+```bash
+# Replace {DIR} with the actual directory path of your compiled pipeline
+gsutil cp {DIR}/cifar10-pipeline.yaml gs://cifar10-pipeline-output/cifar10-pipeline.yaml
+```
+
+### 3. Submit Pipeline Job (Option 1: Using Python Script)
+First, ensure you have the Google Cloud Vertex AI SDK installed:
+```bash
+pip install google-cloud-aiplatform
+```
+
+Then run the submit script:
+```bash
+python pipeline/submitPipeline.py
+```
+
+### 4. Submit Pipeline Job (Option 2: Using Vertex AI UI)
+1. Open Google Cloud Console
+2. Navigate to Vertex AI > Pipelines
+3. Click on "Create Run"
+4. Upload the `cifar10_pipeline.yaml` file
+5. Choose the Cloud Storage location for pipeline outputs
+6. Click "Submit" to execute the pipeline

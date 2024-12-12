@@ -5,10 +5,6 @@ from components.preprocess_component import preprocess_op
 from components.train_component import train_op
 from components.evaluate_component import evaluate_op
 
-PROJECT_ID='group-cloud-project'
-REGION='us-east1'
-BUCKET = 'cifar10-pipeline-output'
-URI = 'gs://cifar10-pipeline-output'
 
 @dsl.pipeline(name="CIFAR-10 Pipeline", description="Pipeline for preprocessing, training, and evaluating CIFAR-10 model.")
 def cifar10_pipeline():
