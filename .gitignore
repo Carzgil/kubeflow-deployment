@@ -5,3 +5,7 @@ x_val.npy
 y_val.npy
 x_test.npy
 y_test.npy
+evaluate_component.yaml
+preprocess_component.yaml
+train_component.yaml
+cifar10-pipeline.yaml

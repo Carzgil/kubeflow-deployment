@@ -9,7 +9,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the preprocessing script
-COPY data/preprocessing.py .
+COPY ../data/preprocessing.py .
 
 # Define the command to run the preprocessing script
 CMD ["python", "preprocessing.py"]

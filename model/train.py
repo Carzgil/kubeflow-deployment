@@ -49,7 +49,7 @@ def train_model():
     history = model.fit(
         x_train, y_train,
         batch_size=128,
-        epochs=15,  #just for testing
+        epochs=5,  #just for testing
         validation_data=(x_val, y_val),
         verbose=1
     )
